@@ -5,8 +5,9 @@ import Searchbar from '../searchbar/searchBar';
 function Header() {
     return(
         <div className='Header'>
-            <img id="logo" alt='logo'></img>
+            <img src='./redditlogo.png' id="logo" alt='logo'></img>
             <Searchbar/>
+            <button id="sign-in">Sign in</button>
         </div>
     )
 };
