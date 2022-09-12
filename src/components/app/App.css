@@ -10,7 +10,7 @@
   display:inline-grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: auto;
-  margin-top: 40px;
+  margin-top: 3.5rem;
   min-height: 40rem;
   width: 100%;
   height: auto;
