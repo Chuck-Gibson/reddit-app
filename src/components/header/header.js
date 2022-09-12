@@ -6,9 +6,11 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 function Header() {
   return (
     <div className="Header">
-        <Logo />
-        <Searchbar />
-        <button id="sign-in">Sign in</button>
+      <div class="app-logo">
+        <Logo/>
+      </div>
+      <Searchbar />
+      <button id="sign-in">Sign in</button>
     </div>
   );
 }
