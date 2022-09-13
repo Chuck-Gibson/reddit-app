@@ -15,8 +15,7 @@ const allPosts = createSlice({
       })
       .addCase(getPosts.fulfilled, (state, action) => {
         state.status = "ok";
-        console.log(action.payload);
-        state.posts.concat(action.payload);
+        state.posts = [...state.posts, ...action.payload];
       })
       .addCase(getPosts.rejected, (state, action) => {
         state.status = "error";
