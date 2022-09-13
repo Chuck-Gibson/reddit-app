@@ -9,7 +9,7 @@ export const getPosts = createAsyncThunk(
      * return []: an array of json object, each object is an individual post
      */
     let fetchingUrl = FETCH_URL;
-    fetchingUrl += postType;
+    fetchingUrl += `/posts/${postType}`;
     try {
       const allPosts = await fetch(fetchingUrl, {
         method: "GET",
@@ -17,7 +17,7 @@ export const getPosts = createAsyncThunk(
           "Content-Type": "application/json",
         },
       });
-      return allPosts;
+      return await allPosts.json();
     } catch (error) {
       console.log(error);
       return []; // return an empty array if an error is thrown
