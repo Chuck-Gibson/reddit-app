@@ -1,12 +1,14 @@
-import React from 'react';
-import './App.css';
-import Header from '../header/header' ;
+import React from "react";
+import "./App.css";
+import Header from "../header/header";
+import AllPosts from "components/allPosts/AllPosts";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <div className="main-container">
+        <AllPosts />
       </div>
     </div>
   );
