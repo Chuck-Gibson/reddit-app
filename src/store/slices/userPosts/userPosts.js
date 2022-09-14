@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPosts } from "./asyncThunks/fetchPosts";
+import { getPosts } from "./asyncThunks/getPosts";
 
 const allPosts = createSlice({
   name: "allPosts",

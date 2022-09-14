@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getPosts } from "store/slices/allPosts/asyncThunks/fetchPosts";
+import { getPosts } from "store/slices/userPosts/asyncThunks/getPosts";
 
 const AllPosts = () => {
   const dispatch = useDispatch();
