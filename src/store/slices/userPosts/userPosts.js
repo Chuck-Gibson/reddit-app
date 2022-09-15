@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPosts } from "./asyncThunks/fetchPosts";
+import { getPosts } from "./asyncThunks/getPosts";
 
 const allPosts = createSlice({
   name: "allPosts",
@@ -15,7 +15,7 @@ const allPosts = createSlice({
       })
       .addCase(getPosts.fulfilled, (state, action) => {
         state.status = "ok";
-        state.posts.concat(action.payload);
+        state.posts = [...state.posts, ...action.payload];
       })
       .addCase(getPosts.rejected, (state, action) => {
         state.status = "error";
