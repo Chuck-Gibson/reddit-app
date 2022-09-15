@@ -3,7 +3,7 @@ import "./header.css";
 import Searchbar from "../searchbar/searchBar";
 import { ReactComponent as Logo } from "assets/logo.svg";
 
-function Header() {
+const Header = () => {
   return (
     <div className="Header">
       <div class="app-logo">
