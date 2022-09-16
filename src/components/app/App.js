@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "../header/header";
 import AllPosts from "components/allPosts/AllPosts";
-import Trending from "components/trending/Trending";
+import Trending from "components/trending/trending";
 
 const App = () => {
   return (
