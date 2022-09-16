@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPosts } from "../userPosts/asyncThunks/getPosts.js";
+import { getTrendingPosts } from "./asyncThunks/getTrendingPosts";
 
 const trendingPosts = createSlice({
     name:'trendingPosts',
@@ -10,14 +10,14 @@ const trendingPosts = createSlice({
     reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getPosts.pending, (state, action) => {
+      .addCase(getTrendingPosts.pending, (state, action) => {
         state.status = "pending";
       })
-      .addCase(getPosts.fulfilled, (state, action) => {
+      .addCase(getTrendingPosts.fulfilled, (state, action) => {
         state.status = "ok";
-        state.posts = [...state.posts, ...action.payload];
+        state.posts = action.payload;
       })
-      .addCase(getPosts.rejected, (state, action) => {
+      .addCase(getTrendingPosts.rejected, (state, action) => {
         state.status = "error";
         console.log(action.payload);
       });
