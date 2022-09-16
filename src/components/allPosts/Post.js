@@ -15,6 +15,10 @@ export const Post = ({
   isVideo,
   media,
 }) => {
+  const status = useSelector((state) => state.allPosts.status);
+  if (status === "pending") {
+    return <div> isLoading component would go here</div>;
+  }
   const getImage = () => {
     if (url.isImage) {
       return (
