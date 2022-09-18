@@ -5,12 +5,12 @@ import store from "store/store.js";
 
 afterEach(() => cleanup());
 
-test("it should render the Img component", () => {
+test("it should render the Post component", () => {
   render(
     <Provider store={store}>
       <Post />
     </Provider>
   );
-  const postElement = screen.getByTestId("component--post");
+  const postElement = screen.getByTestId("allPosts-component--Post");
   expect(postElement).toBeInTheDocument();
 });

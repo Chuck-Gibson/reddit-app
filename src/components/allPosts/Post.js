@@ -23,8 +23,7 @@ export const Post = ({
     return <div> isLoading component would go here</div>;
   }
   const getImages = () => {
-    if (url.isImage) {
-      // return <img alt="" src={url.contentUrl} loading="lazy" />;
+    if (url && url.isImage) {
       return <Img src={url.contentUrl} />;
     }
     return null;
@@ -41,7 +40,7 @@ export const Post = ({
   };
   // JSX
   return (
-    <div className="post">
+    <div data-testid="allPosts-component--Post" className="post">
       <section className="post--info">
         <div className="post--info-meta">
           <h1>{title}</h1>
@@ -63,15 +62,15 @@ export const Post = ({
   );
 };
 
-// Post.propType = {
-//   type: PropTypes.string.isRequired,
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   subreddit: PropTypes.string.isRequired,
-//   voteScore: PropTypes.number.isRequired,
-//   url: PropTypes.string,
-//   author: PropTypes.string.isRequired,
-//   commentCount: PropTypes.number.isRequired,
-//   isVideo: PropTypes.bool.isRequired,
-//   media: PropTypes.object,
-// };
+Post.propType = {
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subreddit: PropTypes.string.isRequired,
+  voteScore: PropTypes.number.isRequired,
+  url: PropTypes.string,
+  author: PropTypes.string.isRequired,
+  commentCount: PropTypes.number.isRequired,
+  isVideo: PropTypes.bool.isRequired,
+  media: PropTypes.object,
+};

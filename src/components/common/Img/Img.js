@@ -14,8 +14,8 @@ export const Img = ({ src, alt, className }) => {
   );
 };
 
-Img.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string,
-  className: PropTypes.string,
-};
+// Img.propTypes = {
+//   src: PropTypes.string.isRequired,
+//   alt: PropTypes.string,
+//   className: PropTypes.string,
+// };

@@ -4,7 +4,7 @@ import { getPosts } from "store/slices/userPosts/asyncThunks/getPosts";
 import { AllPostsContainer } from "./AllPostsContainer";
 import "./allPosts.css";
 
-const AllPosts = () => {
+export const AllPosts = () => {
   // Fetch post
   const dispatch = useDispatch();
   useEffect(() => {
@@ -12,10 +12,9 @@ const AllPosts = () => {
   });
 
   return (
-    <section id="all-posts">
+    <section data-testid="component--allPosts" id="all-posts">
       <AllPostsContainer />
     </section>
   );
 };
 
-export default AllPosts;
