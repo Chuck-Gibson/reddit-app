@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Img } from "components/common/Img/Img";
 import "./allPosts.css";
+import PropTypes from "prop-types";
 
 import { Vote } from "./Vote";
 import { Comment } from "./Comment";
@@ -61,3 +62,16 @@ export const Post = ({
     </div>
   );
 };
+
+// Post.propType = {
+//   type: PropTypes.string.isRequired,
+//   id: PropTypes.string.isRequired,
+//   title: PropTypes.string.isRequired,
+//   subreddit: PropTypes.string.isRequired,
+//   voteScore: PropTypes.number.isRequired,
+//   url: PropTypes.string,
+//   author: PropTypes.string.isRequired,
+//   commentCount: PropTypes.number.isRequired,
+//   isVideo: PropTypes.bool.isRequired,
+//   media: PropTypes.object,
+// };
