@@ -1,4 +1,5 @@
 import { ReactComponent as Arrow } from "assets/arrow.svg";
+import "./allPosts.css";
 
 export const Vote = ({ voteScore }) => {
   const handleVote = (_, score) => {

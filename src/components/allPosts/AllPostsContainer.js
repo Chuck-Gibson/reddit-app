@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Post } from "./Post";
+import "./allPosts.css";
 
 export const AllPostsContainer = () => {
   const { posts, status } = useSelector((state) => state.allPosts);
@@ -22,5 +23,5 @@ export const AllPostsContainer = () => {
       );
     });
   };
-  return <section id="all-posts">{getPosts()}</section>;
+  return <>{getPosts()}</>;
 };

@@ -1,10 +1,10 @@
 import { ReactComponent as CommentIcon } from "assets/comment.svg";
+import "./allPosts.css";
 
 export const Comment = ({ commentCount }) => {
-  console.log(commentCount);
   return (
     <div className="comment">
-      <span className="comment--icon">
+      <span className="comment--icon btn">
         <CommentIcon />
       </span>
       <span className="comment--count">{commentCount}</span>
