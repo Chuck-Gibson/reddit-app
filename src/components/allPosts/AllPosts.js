@@ -12,9 +12,9 @@ const AllPosts = () => {
   });
 
   return (
-    <div className="AllPosts">
+    <section id="all-posts">
       <AllPostsContainer />
-    </div>
+    </section>
   );
 };
 

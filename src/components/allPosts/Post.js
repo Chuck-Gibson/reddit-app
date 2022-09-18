@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux";
+import { Img } from "components/common/Img/Img";
+import "./allPosts.css";
 
 import { Vote } from "./Vote";
 import { Comment } from "./Comment";
@@ -19,18 +21,22 @@ export const Post = ({
   if (status === "pending") {
     return <div> isLoading component would go here</div>;
   }
-  const getImage = () => {
+  const getImages = () => {
     if (url.isImage) {
-      return (
-        <img
-          style={{ width: "15em" }} // FIX: delete this when getting started with css
-          alt=""
-          src={url.contentUrl}
-          loading="lazy"
-        />
-      );
+      // return <img alt="" src={url.contentUrl} loading="lazy" />;
+      return <Img src={url.contentUrl} />;
     }
     return null;
+  };
+
+  const getMedia = () => {
+    if (media) {
+      return (
+        <video controls>
+          <source src={media.contentUrl} />
+        </video>
+      );
+    }
   };
   // JSX
   return (
@@ -40,10 +46,13 @@ export const Post = ({
           <h1>{title}</h1>
           <div className="post--info-meta-author">u/{author}</div>
         </div>
+
         <div className="post--info-subreddit">{subreddit}</div>
       </section>
 
-      {getImage()}
+      {getImages()}
+
+      {getMedia()}
 
       <section className="post--action">
         <Vote voteScore={voteScore} />
