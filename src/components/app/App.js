@@ -2,12 +2,14 @@ import React from "react";
 import "./App.css";
 import Header from "../header/header";
 import AllPosts from "components/allPosts/AllPosts";
+import Trending from "components/trending/trending";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Header />
       <div className="main-container">
+        <Trending />
         <AllPosts />
       </div>
     </div>

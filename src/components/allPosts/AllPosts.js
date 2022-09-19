@@ -1,18 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getPosts } from "store/slices/userPosts/asyncThunks/getPosts";
+import { AllPostsContainer } from "./AllPostsContainer";
+import "./allPosts.css";
 
 const AllPosts = () => {
+  // Fetch post
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(getPosts("hot")); // get all post on mount
+    dispatch(getPosts("rising")); // get all post on mount
   });
 
   return (
-    <div>
-      BRB gotta figure out how to attach the comments of each post to the json
-      you are getting back
-    </div>
+    <section data-testid="component--allPosts" id="all-posts">
+      <AllPostsContainer />
+    </section>
   );
 };
 
