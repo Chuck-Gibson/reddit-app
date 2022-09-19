@@ -10,7 +10,7 @@
   display:inline-grid;
   grid-auto-flow: column;
   grid-template-columns: 1.5fr 3fr 1.5fr;
-  grid-template-rows: repeat(30, 15rem);
+  grid-auto-rows: 15rem;
   gap: 1rem;
   justify-items: center;
   justify-content: space-around;

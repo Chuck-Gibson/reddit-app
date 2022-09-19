@@ -3,6 +3,7 @@
     justify-content: flex-start;
     flex-direction: column;
     font-size: 5;
+    grid-column: 1; 
 }
 
 /* style for individual posts */
