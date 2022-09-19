@@ -11,22 +11,29 @@ const Trending = () => {
     dispatch(getTrendingPosts());
   }, [dispatch]);
 
+  const isLoading = useSelector(selectTrendingPosts).status;
   const trendingPosts = useSelector(selectTrendingPosts).posts;
   // console.log(trendingPosts);
-  return (
+ if (isLoading === "pending") {
+    return <div> Loading trending</div>;
+  } 
+  else {
+
+  return (trendingPosts.map((post) => {
+    return(
     <div className="Trending">
       {trendingPosts.length > 0 && (
         <TrendingPost
-          title={trendingPosts[0].title}
-          content={
-            trendingPosts[0].media === true && trendingPosts[0].media.contentUrl
-          }
-          subreddit={trendingPosts[0].subreddit}
-          url={trendingPosts[0].url}
+          title={post.title}
+          content={post.media === true && post.media.contentUrl}
+          subreddit={post.subreddit}
+          url={post.url}
         ></TrendingPost>
       )}
     </div>
-  );
+    )
+  }));
+};
 };
 
 export default Trending;

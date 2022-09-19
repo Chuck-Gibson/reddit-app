@@ -1,10 +1,11 @@
 .Trending{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: column;
     font-size: 5;
 }
 
+/* style for individual posts */
 .TrendingPost{
     display: flex;
     flex-direction: column;
@@ -14,10 +15,20 @@
     grid-row-start: 1;
     border: 1px solid #303030;
     background-color: #0e0e28;
+    height: 14rem;
+    width: 14rem;
     border-radius: 1rem;
+    margin: 0rem .3rem .3rem;
+    justify-content: center;
 }
 
 .TrendingPost #subreddit{
-    margin-left: 0.3rem;
-    margin-top: .1rem;
+    opacity: 0.6;
+    margin:auto;
+    margin-top: .5rem;
+}
+.TrendingPost #title {
+   text-align: center;
+   margin: auto;
+   color: white;
 }
