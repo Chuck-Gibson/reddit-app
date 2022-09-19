@@ -4,7 +4,7 @@ import { getPosts } from "store/slices/userPosts/asyncThunks/getPosts";
 import { AllPostsContainer } from "./AllPostsContainer";
 import "./allPosts.css";
 
-export const AllPosts = () => {
+const AllPosts = () => {
   // Fetch post
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,3 +18,4 @@ export const AllPosts = () => {
   );
 };
 
+export default AllPosts;

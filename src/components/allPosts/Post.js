@@ -30,7 +30,7 @@ export const Post = ({
   };
 
   const getMedia = () => {
-    if (media) {
+    if (media && isVideo) {
       return (
         <video controls>
           <source src={media.contentUrl} />

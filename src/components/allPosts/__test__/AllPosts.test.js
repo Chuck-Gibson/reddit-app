@@ -1,9 +1,9 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import { AllPosts } from '../AllPosts';
+import AllPosts from "../AllPosts";
 import { Provider } from "react-redux";
 import store from "store/store.js";
 
-afterEach( () => cleanup() );
+afterEach(() => cleanup());
 
 test("It should render properly", () => {
   render(
@@ -11,6 +11,6 @@ test("It should render properly", () => {
       <AllPosts />
     </Provider>
   );
-  const allPostsElement = screen.getByTestId("component--allPosts")
+  const allPostsElement = screen.getByTestId("component--allPosts");
   expect(allPostsElement).toBeInTheDocument();
-})
+});

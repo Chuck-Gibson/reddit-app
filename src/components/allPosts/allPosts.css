@@ -62,6 +62,7 @@
 @media only screen and (min-width: 481px) {
   .post {
     width: 40vw;
+    min-width: 30rem;
   }
 }
 
