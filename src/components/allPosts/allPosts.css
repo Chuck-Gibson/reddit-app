@@ -1,13 +1,12 @@
-.AllPosts {
+#all-posts {
   grid-column-start: 2;
 }
 
 /* CSS rule sets for individual post starts here */
-
 .post {
   display: flex;
   flex-direction: column;
-  /* TODO: change this color */
+  /* FIX: change this color */
   background: green;
   position: relative;
   margin-bottom: 1rem;
@@ -49,9 +48,13 @@
   display: flex;
   align-items: center;
   gap: 0.3em;
+  padding: 0.1rem 0.7rem;
+  border-radius: 1rem;
+  border: 1px solid blue;
 }
 
 .post--action .vote {
+  /* FIX: Change colors once refactored CSS */
   margin-right: 1rem;
 }
 

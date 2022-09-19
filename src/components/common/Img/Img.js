@@ -8,7 +8,7 @@ export const Img = ({ src, alt, className }) => {
         src={src}
         className={className}
         data-testid="image-component"
-        style={{ width: "100%" }}
+        style={{ width: "100%", borderRadius: 3 }}
       />
     </>
   );

@@ -23,5 +23,6 @@ export const AllPostsContainer = () => {
       );
     });
   };
-  return <>{getPosts()}</>;
+  if (status === "pending") return <div>loading</div>;
+  if (status === "ok") return <>{getPosts()}</>;
 };

@@ -32,7 +32,13 @@ export const Post = ({
   const getMedia = () => {
     if (media && isVideo) {
       return (
-        <video controls>
+        <video
+          controls
+          muted
+          style={{
+            borderRadius: 2,
+          }}
+        >
           <source src={media.contentUrl} />
         </video>
       );
