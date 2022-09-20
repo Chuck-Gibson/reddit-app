@@ -1,4 +1,6 @@
-export const SearchInput = ({ value }) => {
+import PropTypes from "prop-types";
+
+export const SearchInput = ({ handleChange, value }) => {
   return (
     <>
       <input
@@ -6,8 +8,13 @@ export const SearchInput = ({ value }) => {
         placeholder="Search something..."
         role="search"
         value={value}
-        onChange={() => null}
+        onChange={handleChange}
       />
     </>
   );
+};
+
+SearchInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
