@@ -5,8 +5,8 @@
 /.pnp
 .pnp.js
 
-# snapshots testing
-*/**/__snapshots__/*/**
+# testing
+**/*/__snapshots__/**/*
 
 # production
 /build
