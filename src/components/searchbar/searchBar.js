@@ -11,13 +11,13 @@ function SearchBar() {
   };
 
   const handleSubmit = () => {
-    // dispatch action here
+    // TODO: dispatch action here
     setSearchValue(() => "");
   };
 
   return (
     <div className="SearchBar">
-      {/* <Magnifier /> */}
+      <Magnifier />
       <SearchInput handleChange={handleInputChange} value={searchValue} />
       <SubmitButton handleSubmit={handleSubmit} />
     </div>
