@@ -1,3 +1,4 @@
+import { create, act } from "react-test-renderer";
 import { SearchInput } from "../SearchInput";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 
@@ -13,7 +14,7 @@ describe("SearchInput component test", () => {
     expect(inputElement).toBeInTheDocument();
   });
 
-  it("it should have a placeholder text", () => {
+  it("should have a placeholder text", () => {
     const placeholder = "Search something...";
     render(<SearchInput value={""} handleChange={() => null} />);
 
@@ -42,5 +43,26 @@ describe("SearchInput component test", () => {
     const inputElement = screen.getByRole("search");
     fireEvent.change(inputElement, { target: { value: _string } });
     expect(mockSetValue).toHaveBeenCalled(); // expect set value function called
+  });
+});
+
+describe("SearchInput snapshot tests", () => {
+  it("renders the proper value of user input", () => {
+    const mockFn = jest.fn();
+
+    // Create a root node
+    let treeNode;
+    act(() => {
+      treeNode = create(<SearchInput value={""} handleChange={mockFn} />);
+    });
+    // Assertion on initial render
+    expect(treeNode.toJSON()).toMatchSnapshot();
+
+    // User keyboard event
+    act(() => {
+      treeNode.update(<SearchInput value={"foo bar"} handleChange={mockFn} />);
+    });
+    // Assertion on updated render, the component holds the proper value
+    expect(treeNode.toJSON()).toMatchSnapshot();
   });
 });

@@ -1,3 +1,4 @@
+import { create } from "react-test-renderer";
 import { screen, cleanup, fireEvent, render } from "@testing-library/react";
 import SearchBar from "../searchBar";
 
@@ -32,5 +33,13 @@ describe("Search bar integration tests", () => {
     expect(userInput.value).toBe("");
     // Place holder text visible
     expect(placeholderText).toBeVisible();
+  });
+});
+
+describe("Search bar snapshot testing", () => {
+  it("should render with no value", () => {
+    const treeNodes = create(<SearchBar />);
+
+    expect(treeNodes.toJSON()).toMatchSnapshot();
   });
 });
