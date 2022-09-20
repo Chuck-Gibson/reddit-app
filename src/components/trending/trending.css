@@ -1,30 +1,50 @@
-.Trending{
+#Trending{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     font-size: 5;
-    grid-column: 1; 
+    grid-column: 1;
+    text-align: center;
+    
+}
+#Trending h2 {
+    margin-bottom: 1.5rem;
 }
 
 /* style for individual posts */
+.Trending-post-container{
+    display: flex;
+    justify-content: center;
+    grid-column: 1;
+    grid-row-start: 1;
+    margin: 0rem 1rem 1rem;
+}
+.Trending-post-container a {
+    color: white;
+}
+
+.TrendingPost:hover{
+    box-shadow:0.25rem 0.25rem .5rem #303030;
+    margin-right:.25rem;
+}
+.TrendingPost:active{
+    background-color: #1a1a4a;
+}
+
+
 .TrendingPost{
     display: flex;
     flex-direction: column;
-    background-color: black;
-    border: 2px white solid;
-    grid-column: 1;
-    grid-row-start: 1;
     border: 1px solid #303030;
     background-color: #0e0e28;
-    height: 14rem;
-    width: 14rem;
+    height: 12rem;
+    width: 12rem;
     border-radius: 1rem;
-    margin: 0rem .3rem .3rem;
     justify-content: center;
 }
 
 .TrendingPost #subreddit{
-    opacity: 0.6;
+    opacity: .6;
     margin:auto;
     margin-top: .5rem;
 }
@@ -32,4 +52,6 @@
    text-align: center;
    margin: auto;
    color: white;
+   margin-left: .5rem;
+   margin-right: .5rem;
 }

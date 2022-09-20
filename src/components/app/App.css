@@ -9,14 +9,30 @@
 .main-container{
   display:inline-grid;
   grid-auto-flow: column;
-  grid-template-columns: 1.5fr 3fr 1.5fr;
-  grid-auto-rows: 15rem;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-rows: max-content;
   gap: 1rem;
-  justify-items: center;
-  justify-content: space-around;
-  align-content: space-around;
   margin: 4.5rem 1rem;
   min-height: 40rem;
   width: 100%;
   height: auto;
+}
+
+/* loading circle */
+.loader {
+  margin-left: 25%;
+  margin-top: 20%;
+  border-top: .2rem dotted #000719;
+  border-bottom: .2rem dashed #303030 ;
+  border-right: .2rem dotted #303030 ;
+  border-left: .2rem solid #303030;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
