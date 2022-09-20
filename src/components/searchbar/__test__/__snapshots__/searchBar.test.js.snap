@@ -1,27 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search bar snapshot testing should match snapshot 1`] = `
-<div
-  className="SearchBar"
->
-  <svg>
-    search.svg
-  </svg>
-  <input
-    onChange={[Function]}
-    placeholder="Search something..."
-    role="search"
-    type="text"
-    value=""
-  />
-  <button
-    onClick={[Function]}
-  >
-    Submit
-  </button>
-</div>
-`;
-
 exports[`Search bar snapshot testing should render with no value 1`] = `
 <div
   className="SearchBar"
