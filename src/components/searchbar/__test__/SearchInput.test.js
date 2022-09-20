@@ -11,6 +11,7 @@ describe("SearchInput component test", () => {
     );
 
     const inputElement = container.firstChild;
+
     expect(inputElement).toBeInTheDocument();
   });
 
@@ -19,6 +20,7 @@ describe("SearchInput component test", () => {
     render(<SearchInput value={""} handleChange={() => null} />);
 
     const inputElement = screen.getByPlaceholderText(/search something.../i);
+
     expect(inputElement.placeholder).toBe(placeholder);
   });
 
@@ -27,22 +29,25 @@ describe("SearchInput component test", () => {
     render(<SearchInput handleChange={() => null} value={value} />);
 
     const inputElement = screen.getByRole("search");
+
     expect(inputElement.value).toBe(value);
   });
 
   it("should change the `value` as user types", () => {
     const _string = "Hello world";
-    let userInput = "";
-    const mockSetValue = jest.fn();
-    mockSetValue.mockImplementation((e) => {
-      userInput += e.target.value;
+    let _userInput = "";
+
+    const mockSetValue = jest.fn().mockImplementation((e) => {
+      _userInput += e.target.value;
     });
 
-    render(<SearchInput handleChange={mockSetValue} value={userInput} />);
+    render(<SearchInput handleChange={mockSetValue} value={_userInput} />);
 
     const inputElement = screen.getByRole("search");
+
     fireEvent.change(inputElement, { target: { value: _string } });
-    expect(mockSetValue).toHaveBeenCalled(); // expect set value function called
+
+    expect(_string === _userInput).toBe(true); // checking values
   });
 });
 
