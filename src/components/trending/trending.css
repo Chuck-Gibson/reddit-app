@@ -7,10 +7,21 @@
     text-align: center;
     
 }
-#Trending h2 {
-    margin-bottom: 1.5rem;
-}
 
+#title-container{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+#Trending h2 {
+    margin-bottom:1rem;
+}
+.trending-icon{
+    margin-bottom:.6rem;
+    margin-left: .3rem;
+    width: 1.5rem;
+    z-index: 100;
+}
 /* style for individual posts */
 .Trending-post-container{
     display: flex;
@@ -22,15 +33,6 @@
 .Trending-post-container a {
     color: white;
 }
-
-.TrendingPost:hover{
-    box-shadow:0.25rem 0.25rem .5rem #303030;
-    margin-right:.25rem;
-}
-.TrendingPost:active{
-    background-color: #1a1a4a;
-}
-
 
 .TrendingPost{
     display: flex;
@@ -47,6 +49,8 @@
     opacity: .6;
     margin:auto;
     margin-top: .5rem;
+    z-index: 2;
+    color: white;
 }
 .TrendingPost #title {
    text-align: center;
@@ -54,4 +58,22 @@
    color: white;
    margin-left: .5rem;
    margin-right: .5rem;
+   z-index: 1;
 }
+
+/*.TrendingPost img {
+    position: absolute;
+    height: 11.9rem;
+    width: 11.9rem;
+    border-radius: 1rem;
+} this was a test to put images in trending */
+/* changes when interacted with */
+.TrendingPost:hover{
+    box-shadow:0.25rem 0.25rem .5rem #303030;
+    margin-right:.25rem;
+    border-color: #1a1a4a;
+}
+.TrendingPost:active{
+    background-color: #1a1a4a;
+}
+
