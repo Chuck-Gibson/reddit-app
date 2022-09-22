@@ -25,6 +25,6 @@ const trendingPosts = createSlice({
       });
   },
 });
-export const {handleSubmit} = trendingPosts.actions;
+export const { handleSubmit } = trendingPosts.actions;
 export const selectTrendingPosts = (state) => state.trendingPosts;
 export default trendingPosts.reducer;
