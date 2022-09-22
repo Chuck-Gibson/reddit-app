@@ -1,19 +1,47 @@
-.SearchBar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    width: 30%;
-    min-width: 10rem;
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 30%;
+  min-width: 10rem;
 }
 
 .SearchBar input {
-    color: white;
-    height: 1.5rem;
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-    text-align: center;
-    background-color: #303030;
-    margin: auto;
+  color: white;
+  height: 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  /* text-align: center; */
+  background-color: #303030;
+  margin: auto;
+  padding: 0 0.7rem;
+}
+
+.SearchBar {
+  position: relative;
+}
+.SearchBar svg {
+  width: 1rem;
+}
+
+.SearchBar button {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #303030;
+  color: white;
+  transition: background-color 150ms linear;
+}
+
+.SearchBar button.has-text {
+  background-color: #222277;
 }

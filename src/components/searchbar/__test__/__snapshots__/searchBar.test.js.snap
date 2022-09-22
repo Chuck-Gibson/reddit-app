@@ -4,9 +4,6 @@ exports[`Search bar snapshot testing should render with no value 1`] = `
 <div
   className="SearchBar"
 >
-  <svg>
-    search.svg
-  </svg>
   <input
     onChange={[Function]}
     placeholder="Search something..."
@@ -15,9 +12,12 @@ exports[`Search bar snapshot testing should render with no value 1`] = `
     value=""
   />
   <button
+    className={null}
     onClick={[Function]}
   >
-    Submit
+    <svg>
+      search.svg
+    </svg>
   </button>
 </div>
 `;
