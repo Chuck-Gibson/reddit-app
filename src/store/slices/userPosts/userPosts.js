@@ -1,24 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getPosts } from "./asyncThunks/getPosts";
+import { createSlice } from '@reduxjs/toolkit';
+import { getPosts } from './asyncThunks/getPosts';
+import { searchPosts } from './asyncThunks/searchPosts';
 
 const allPosts = createSlice({
-  name: "allPosts",
+  name: 'allPosts',
   initialState: {
     posts: [],
-    status: "idle", // idle, pending, ok, error
+    status: 'idle', // idle, pending, ok, error
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getPosts.pending, (state, action) => {
-        state.status = "pending";
+        state.status = 'pending';
       })
       .addCase(getPosts.fulfilled, (state, action) => {
-        state.status = "ok";
+        state.status = 'ok';
         state.posts = action.payload;
       })
       .addCase(getPosts.rejected, (state, action) => {
-        state.status = "error";
+        state.status = 'error';
+      })
+
+      .addCase(searchPosts.pending, (state, action) => {
+        state.status = 'pending';
+      })
+      .addCase(searchPosts.fulfilled, (state, action) => {
+        state.status = 'ok';
+        state.posts = action.payload;
+      })
+      .addCase(searchPosts.rejected, (state, action) => {
+        state.status = 'error';
       });
   },
 });
