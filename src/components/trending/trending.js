@@ -32,6 +32,7 @@ const Trending = () => {
     <div className="Trending-post-container">
       {trendingPosts.length > 0 && (
           <TrendingPost
+          key={post.id}
           post={post}
           id={post.id}
           title={post.title}

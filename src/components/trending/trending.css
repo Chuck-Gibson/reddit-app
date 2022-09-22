@@ -45,14 +45,15 @@
     justify-content: center;
 }
 
-.TrendingPost #subreddit{
+.TrendingPost .trendingPost--info-subreddit{
     opacity: .6;
     margin:auto;
     margin-top: .5rem;
+    margin-bottom: 4rem;
     z-index: 2;
     color: white;
 }
-.TrendingPost #title {
+.TrendingPost .trendingPost--info-title {
    text-align: center;
    margin: auto;
    color: white;

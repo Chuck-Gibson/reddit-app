@@ -19,12 +19,14 @@ const TrendingPost = ({
     } else { return str };
   }
 
-  /* <img src={url} alt="trending post"></img> code for adding image for future use */
+ 
   return (
-    <div className="TrendingPost" onClick={() => dispatch(addTrending(post))} >
-      <p id="subreddit">{subreddit}</p>
-      <p id="title">{shortTitle(title)}</p>
-      {content === true? <img src={content} alt={title}></img> : null}
+    <div data-testid="TrendingPosts-component--Post" 
+          className="TrendingPost" 
+          onClick={() => dispatch(addTrending(post))} >
+      {/*<img src={url} alt="trending post"></img> code for adding image for future use */}
+      <p className="trendingPost--info-subreddit">{subreddit}</p>
+      <p className="trendingPost--info-title">{shortTitle(title)}</p>
     </div>
   );
 };
