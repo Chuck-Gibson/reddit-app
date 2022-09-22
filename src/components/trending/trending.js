@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTrendingPosts } from "store/slices/trending/asyncThunks/getTrendingPosts";
-import { selectTrendingPosts} from "../../store/slices/trending/trendingslice";
+import { selectTrendingPosts } from "../../store/slices/trending/trendingslice";
 import TrendingPost from "./trendingPost";
 import "./trending.css";
 import { ReactComponent as TrendingUp } from "../../assets/Trending-up.svg";
