@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput snapshot tests renders the proper value of user input 1`] = `
+<input
+  onChange={[MockFunction]}
+  placeholder="Search something..."
+  role="search"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`SearchInput snapshot tests renders the proper value of user input 2`] = `
+<input
+  onChange={[MockFunction]}
+  placeholder="Search something..."
+  role="search"
+  type="text"
+  value="foo bar"
+/>
+`;
