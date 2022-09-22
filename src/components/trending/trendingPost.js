@@ -1,8 +1,8 @@
 import React from "react";
 import "./trending.css";
 import PropTypes from "prop-types";
-import {addTrending} from "../../store/slices/userPosts/userPosts"
-import { useDispatch} from "react-redux";
+import { addTrending } from "../../store/slices/userPosts/userPosts"
+import { useDispatch } from "react-redux";
 
 const TrendingPost = ({ 
   title, 
