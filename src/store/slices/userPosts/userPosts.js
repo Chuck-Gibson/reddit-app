@@ -46,5 +46,5 @@ const allPosts = createSlice({
   },
 });
 
-export const {addTrending} = allPosts.actions; 
+export const { addTrending } = allPosts.actions; 
 export default allPosts.reducer;
