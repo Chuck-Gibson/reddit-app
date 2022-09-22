@@ -20,7 +20,6 @@
   margin-left: 1%;
 }
 .Header button {
-  display:none; /* too be changed when the button does something */
   border: 1px solid #303030;
   height: 1.6rem;
   width: 4.5rem;
