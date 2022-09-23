@@ -20,8 +20,8 @@
 
 /* loading circle */
 .loader {
-  margin-left: 25%;
-  margin-top: 20%;
+  margin-left: 50%;
+  margin-top: 50%;
   border-top: .2rem dotted #000719;
   border-bottom: .2rem dashed #303030 ;
   border-right: .2rem dotted #303030 ;
