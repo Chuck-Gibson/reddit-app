@@ -1,5 +1,4 @@
 import { ReactComponent as CommentIcon } from "assets/comment.svg";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getComments } from "store/slices/comments/asyncThunks/getComments";
 import "./allPosts.css";

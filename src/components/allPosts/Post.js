@@ -3,7 +3,6 @@ import { Img } from "components/common/Img/Img";
 import "./allPosts.css";
 import PropTypes from "prop-types";
 import PostComments from "../comments/PostComments";
-import { selectComments } from "../../store/slices/comments/commentsSlice"
 
 
 import { Vote } from "./Vote";
@@ -21,7 +20,6 @@ export const Post = ({
   isVideo,
   media,
 }) => {
-  const comments = useSelector(selectComments)
   const status = useSelector((state) => state.allPosts.status);
   if (status === "pending") {
     return <div> isLoading component would go here</div>;
@@ -48,7 +46,7 @@ export const Post = ({
       );
     }
   };
-  const commentsPostId = id + "postComments"
+  const commentsPostId = type +"_"+id + "postComments"
 ;
   // JSX
   return (
@@ -68,10 +66,10 @@ export const Post = ({
 
       <section className="post--action">
         <Vote voteScore={voteScore} />
-        <Comment commentCount={commentCount} postId={id} />
+        <Comment commentCount={commentCount} postId={type+"_"+id} />
       </section>
       <section id={commentsPostId} className="post-container">
-       <PostComments  postId={id} />
+       <PostComments  postId={type+"_"+id} />
        </section>
     </div>
   );

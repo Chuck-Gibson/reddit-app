@@ -20,7 +20,13 @@ const commentsSlice = createSlice({
         })
         .addCase(getComments.fulfilled, (state,action) => {
             state.status = "ok"
-            state.comments = action.payload;
+            if(!state.comments.includes(action.payload[0].postId)){
+                 const payload = {
+                    postId:action.payload[0].postId,
+                    comments:action.payload
+                    };
+                state.comments = [payload, ...state.comments]
+            }
         })
         .addCase(getComments.rejected, (state, action) =>{
             state.status = "error";
