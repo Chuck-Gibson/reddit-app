@@ -17,7 +17,6 @@ const MockApp = () => {
   );
 };
 
-render(<MockApp />);
 beforeEach(() => render(<MockApp />));
 afterEach(() => cleanup());
 
