@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 
 export const useLocalStorage = (key, defaultValue) => {
+  if (typeof key !== 'string' || typeof defaultValue !== 'string') {
+    throw new Error('key and value can only be of type string');
+  }
+
   const [state, setState] = useState(() => {
     let value;
     try {
       value = window.localStorage.getItem(key);
     } catch (error) {
       console.log(error);
-      value = String(defaultValue);
+      value = defaultValue;
     }
 
     return value;
