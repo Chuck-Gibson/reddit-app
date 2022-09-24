@@ -3,19 +3,17 @@ import './header.css';
 import Searchbar from '../searchbar/searchBar';
 import { ThemeSwitcher } from 'components/themeSwitcher/ThemeSwitcher';
 import { ReactComponent as Logo } from 'assets/logo.svg';
+import PropTypes from 'prop-types';
 
-const Header = ({ theme, handleThemeToggle }) => {
+const Header = ({ rootNode }) => {
   return (
     <div className='Header'>
-      <div class='app-logo'>
+      <div className='app-logo'>
         <Logo />
       </div>
       <Searchbar />
-      <div class='header--util'>
-        <ThemeSwitcher
-          currentTheme={theme}
-          handleClick={handleThemeToggle}
-        />
+      <div className='header--util'>
+        <ThemeSwitcher node={rootNode} />
         <button id='sign-in'>Sign in</button>
       </div>
     </div>
@@ -23,3 +21,7 @@ const Header = ({ theme, handleThemeToggle }) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  rootNode: PropTypes.object.isRequired,
+};

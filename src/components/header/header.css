@@ -19,6 +19,24 @@
   border-radius: 50%;
   margin-left: 1%;
 }
+
+.header--util {
+  display: flex;
+}
+.header--util button:first-child {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-0.4rem);
+  padding: 0.3rem;
+}
+.header--util button:first-child svg {
+  transform: translate(-1px, -1px);
+}
+
 .Header button {
   border: 1px solid var(--border-color);
   height: 1.6rem;

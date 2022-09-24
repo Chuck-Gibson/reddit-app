@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { create } from 'react-test-renderer';
 
 const MockApp = () => {
   const node = useRef();
@@ -16,16 +17,26 @@ const MockApp = () => {
   );
 };
 
-beforeEach(() => {
-  render(<MockApp />);
-});
+render(<MockApp />);
+beforeEach(() => render(<MockApp />));
 afterEach(() => cleanup());
 
 describe('Test for theme switcher', () => {
   it('changes dataset-theme of node', () => {
     const root = screen.getByTestId('rootDiv');
-    const btn = screen.getByRole('button');
+    const currentTheme = root.dataset.theme; // Theme before click event
+    const btn = screen.getByRole('button'); // Theme switcher button
+
     fireEvent.click(btn);
-    expect(root.data.theme).toBe('light');
+
+    expect(root.dataset.theme).not.toBe(currentTheme);
+  });
+
+  describe('Snapshot testing', () => {
+    it('matches snapshop testing', () => {
+      const rootNode = create(<MockApp />);
+
+      expect(rootNode.toJSON()).toMatchSnapshot();
+    });
   });
 });

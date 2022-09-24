@@ -1,26 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './App.css';
 import Header from '../header/header';
 import AllPosts from 'components/allPosts/AllPosts';
 import Trending from 'components/trending/trending';
-import { useLocalStorage } from 'hooks/useLocalStorage';
 
 const App = () => {
-  const [theme, setTheme] = useLocalStorage('theme', 'dark');
-  const toggleTheme = () => {
-    if (theme === 'dark') setTheme(() => 'light');
-    else setTheme(() => 'dark');
-  };
-
+  const rootNode = useRef();
   return (
     <div
       className='App'
-      data-theme={theme}
+      ref={rootNode}
     >
-      <Header
-        theme={theme}
-        handleThemeToggle={toggleTheme}
-      />
+      <Header rootNode={rootNode} />
       <div className='main-container'>
         <Trending />
         <AllPosts />

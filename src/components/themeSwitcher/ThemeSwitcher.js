@@ -1,18 +1,28 @@
 import React, { useEffect } from 'react';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import PropTypes from 'prop-types';
+import { useLocalStorage } from 'hooks/useLocalStorage';
 
-export const ThemeSwitcher = ({ currentTheme, handleClick, _className }) => {
+export const ThemeSwitcher = ({ node }) => {
+  const [theme, setTheme] = useLocalStorage('theme', 'dark');
+  const toggleTheme = () => {
+    if (theme === 'dark') setTheme(() => 'light');
+    else setTheme(() => 'dark');
+  };
+
+  useEffect(() => {
+    node.current.dataset.theme = theme;
+  }, [theme, node]);
+
   return (
     <>
-      <button
-        className={_className}
-        onClick={handleClick}
-      >
-        {currentTheme === 'dark' ? <MdLightMode /> : <MdDarkMode />}
+      <button onClick={toggleTheme}>
+        {theme === 'dark' ? <MdLightMode /> : <MdDarkMode />}
       </button>
     </>
   );
 };
 
-ThemeSwitcher.propTypes = {};
+ThemeSwitcher.propTypes = {
+  node: PropTypes.object.isRequired,
+};
