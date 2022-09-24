@@ -1,4 +1,6 @@
 #all-posts {
+  display: flex;
+  flex-direction: column;
   grid-column-start: 2;
 
 }
@@ -10,7 +12,7 @@
   /* FIX: change this color */
   border: 1px solid #303030;
   background-color: #0e0e28;
-  position: relative;
+  width: fit-content;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -70,5 +72,27 @@
     min-width: 30rem;
   }
 }
+
+/* rules for comments */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width:90%;
+}
+
+.post-comment {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  margin-top: 1rem;
+  
+}
+.post-comment p {
+  padding-right: 1rem;
+}
+.comment-Spacer {
+  transform: translate(-0.5rem, 0.5rem);
+} 
 
 /* CSS rule sets for individual post ends here */
