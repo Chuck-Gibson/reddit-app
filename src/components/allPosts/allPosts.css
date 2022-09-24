@@ -1,4 +1,6 @@
 #all-posts {
+  display: flex;
+  flex-direction: column;
   grid-column-start: 2;
 }
 
@@ -67,5 +69,27 @@
     min-width: 30rem;
   }
 }
+
+/* rules for comments */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width:90%;
+}
+
+.post-comment {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  margin-top: 1rem;
+  
+}
+.post-comment p {
+  padding-right: 1rem;
+}
+.comment-Spacer {
+  transform: translate(-0.5rem, 0.5rem);
+} 
 
 /* CSS rule sets for individual post ends here */

@@ -2,6 +2,9 @@ import { useSelector } from "react-redux";
 import { Img } from "components/common/Img/Img";
 import "./allPosts.css";
 import PropTypes from "prop-types";
+import PostComments from "../comments/PostComments";
+import { selectComments } from "../../store/slices/comments/commentsSlice"
+
 
 import { Vote } from "./Vote";
 import { Comment } from "./Comment";
@@ -18,6 +21,7 @@ export const Post = ({
   isVideo,
   media,
 }) => {
+  const comments = useSelector(selectComments)
   const status = useSelector((state) => state.allPosts.status);
   if (status === "pending") {
     return <div> isLoading component would go here</div>;
@@ -28,7 +32,7 @@ export const Post = ({
     }
     return null;
   };
-
+  
   const getMedia = () => {
     if (media && isVideo) {
       return (
@@ -44,6 +48,8 @@ export const Post = ({
       );
     }
   };
+  const commentsPostId = id + "postComments"
+;
   // JSX
   return (
     <div data-testid="allPosts-component--Post" className="post">
@@ -62,8 +68,11 @@ export const Post = ({
 
       <section className="post--action">
         <Vote voteScore={voteScore} />
-        <Comment commentCount={commentCount} />
+        <Comment commentCount={commentCount} postId={id} />
       </section>
+      <section id={commentsPostId} className="post-container">
+       <PostComments  postId={id} />
+       </section>
     </div>
   );
 };
