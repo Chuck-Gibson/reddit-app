@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTrendingPosts } from "./asyncThunks/getTrendingPosts";
 
+
 const trendingPosts = createSlice({
     name:'trendingPosts',
     initialState: {
         posts:[],
         status: "idle"
     },
+
     reducers: {},
   extraReducers: (builder) => {
     builder

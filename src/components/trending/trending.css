@@ -1,57 +1,77 @@
-#Trending{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    font-size: 5;
-    grid-column: 1;
-    text-align: center;
-    
+#Trending {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 5;
+  grid-column: 1;
+  text-align: center;
+}
+
+#title-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 #Trending h2 {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-
+.trending-icon {
+  margin-bottom: 0.6rem;
+  margin-left: 0.3rem;
+  width: 1.5rem;
+  z-index: 100;
+}
 /* style for individual posts */
-.Trending-post-container{
-    display: flex;
-    justify-content: center;
-    grid-column: 1;
-    grid-row-start: 1;
-    margin: 0rem 1rem 1rem;
+.Trending-post-container {
+  display: flex;
+  justify-content: center;
+  grid-column: 1;
+  grid-row-start: 1;
+  margin: 0rem 1rem 1rem;
 }
 .Trending-post-container a {
-    color: white;
+  color: var(--foreground);
 }
 
-.TrendingPost:hover{
-    box-shadow:0.25rem 0.25rem .5rem #303030;
-    margin-right:.25rem;
-}
-.TrendingPost:active{
-    background-color: #1a1a4a;
+.TrendingPost {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  background-color: var(--background);
+  height: 12rem;
+  width: 12rem;
+  border-radius: 1rem;
+  justify-content: center;
+  transition: all 150ms ease-out;
 }
 
+.TrendingPost .trendingPost--info-subreddit {
+  opacity: 0.6;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  z-index: 2;
+  color: var(--foreground);
+}
+.TrendingPost .trendingPost--info-title {
+  text-align: center;
+  margin: auto 1rem 1rem 1rem;
+  color: var(--foreground);
+  z-index: 1;
+}
 
-.TrendingPost{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #303030;
-    background-color: #0e0e28;
-    height: 12rem;
-    width: 12rem;
+/*.TrendingPost img {
+    position: absolute;
+    height: 11.9rem;
+    width: 11.9rem;
     border-radius: 1rem;
-    justify-content: center;
+} this was a test to put images in trending */
+/* changes when interacted with */
+.TrendingPost:hover {
+  box-shadow: 0.25rem 0.25rem 0.5rem var(--border-color);
+  transform: translate(-4px, -2px);
+  border-color: var(--accent-secondary);
 }
-
-.TrendingPost #subreddit{
-    opacity: .6;
-    margin:auto;
-    margin-top: .5rem;
-}
-.TrendingPost #title {
-   text-align: center;
-   margin: auto;
-   color: white;
-   margin-left: .5rem;
-   margin-right: .5rem;
+.TrendingPost:active {
+  background-color: var(--accent-secondary);
 }

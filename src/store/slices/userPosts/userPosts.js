@@ -8,7 +8,18 @@ const allPosts = createSlice({
     posts: [],
     status: 'idle', // idle, pending, ok, error
   },
-  reducers: {},
+  reducers: {
+    addTrending : (state,action) => {
+        const included = state.posts.find(post => post.id === action.payload.id)
+      if (included){
+        console.log('already added');
+        window.scroll({top:0, behavior: 'smooth'})
+      } else {
+        state.posts = [action.payload, ...state.posts]
+        return window.scroll({top:0, behavior: 'smooth'})
+      }
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getPosts.pending, (state, action) => {
@@ -35,4 +46,5 @@ const allPosts = createSlice({
   },
 });
 
+export const { addTrending } = allPosts.actions; 
 export default allPosts.reducer;

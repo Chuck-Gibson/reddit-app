@@ -2,17 +2,15 @@
   display: flex;
   flex-direction: column;
   grid-column-start: 2;
-
 }
 
 /* CSS rule sets for individual post starts here */
 .post {
   display: flex;
   flex-direction: column;
-  /* FIX: change this color */
-  border: 1px solid #303030;
-  background-color: #0e0e28;
-  width: fit-content;
+  border: 1px solid var(--border-color);
+  background-color: var(--background);
+  position: relative;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -54,11 +52,10 @@
   gap: 0.3em;
   padding: 0.1rem 0.7rem;
   border-radius: 1rem;
-  border: 1px solid #303030;
+  border: 1px solid var(--border-color);
 }
 
 .post--action .vote {
-  /* FIX: Change colors once refactored CSS */
   margin-right: 1rem;
 }
 
