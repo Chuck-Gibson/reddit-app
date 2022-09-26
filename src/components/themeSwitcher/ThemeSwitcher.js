@@ -16,9 +16,11 @@ export const ThemeSwitcher = ({ node }) => {
 
   return (
     <>
-      <button onClick={toggleTheme}>
-        {theme === 'dark' ? <MdLightMode /> : <MdDarkMode />}
-      </button>
+    <label className="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" onClick={toggleTheme}/>
+      <span class="slider-round">
+        {theme === 'dark' ? <MdLightMode /> : <MdDarkMode />}</span>
+    </label>
     </>
   );
 };
