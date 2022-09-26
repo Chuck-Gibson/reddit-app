@@ -49,15 +49,6 @@
   background-color: var(--accent-main);
   transition: all 150ms; 
 }
-.header-util .slider-round::before {
-  display: absolute;
-  border-radius: 100%;
-  height:1.4rem;
-  width:1.4rem;
-  border: 1px solid --var(--border-color);
-  background-color: white;
-  transition: all .4s;
-}
 .header--util .slider-round svg {
   transform: translate(1px, 2px);
 }
