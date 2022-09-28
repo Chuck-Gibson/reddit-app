@@ -7,23 +7,24 @@ import { ShowComments } from "../comments/PostComments";
 
 
 export const Comment = ({ commentCount,postId }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   let commentsShown = false;
   
-  const handleClick = (postId) =>{
-    ShowComments(postId);
-    if (!commentsShown){
-      dispatch(getComments(postId))
-       commentsShown = true; 
+  const handleClick = (postId,commentCount) =>{
+    if(commentCount > 0){
+      ShowComments(postId);
+      if (!commentsShown){
+       commentsShown = true;
+      dispatch(getComments(postId)) 
     } 
-    
+    }
   }
   
 
   return (
     
     <div className="comment">
-      <span className="comment--icon btn" onClick={() => handleClick(postId)}>
+      <span className="comment--icon btn" onClick={() => handleClick(postId,commentCount)}>
         <CommentIcon />
       </span>
       <span className="comment--count">{commentCount}</span>

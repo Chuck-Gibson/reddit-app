@@ -21,9 +21,9 @@ const TrendingPost = ({
 
  
   return (
-    <div data-testid="TrendingPosts-component--Post" 
+    <div data-testid="TrendingPosts-component--Post"
           className="TrendingPost" 
-          onClick={() => dispatch(addTrending(post))} >
+          onClick={() => dispatch(addTrending(post))}>
       {/*<img src={url} alt="trending post"></img> code for adding image for future use */}
       <p className="trendingPost--info-subreddit">{subreddit}</p>
       <p className="trendingPost--info-title">{shortTitle(title)}</p>

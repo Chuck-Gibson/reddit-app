@@ -6,8 +6,9 @@ import { selectComments } from "store/slices/comments/commentsSlice";
 
 
 
-const PostComments = ({postId}) => {
-    const comments =  useSelector(selectComments).comments
+const PostComments = ({postId, id}) => {
+    return
+   // const comments =  useSelector(selectComments).comments
     /*comments.map((post) => {
         if(postId === post.postId ){
             console.log("test")
