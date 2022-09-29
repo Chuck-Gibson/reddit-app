@@ -46,7 +46,7 @@ export const Post = ({
       );
     }
   };
-  const commentsPostId = type +"_"+id + "postComments"
+  const commentsPostId = id + "comments"
 ;
   // JSX
   return (

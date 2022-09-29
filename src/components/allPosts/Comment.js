@@ -12,11 +12,11 @@ export const Comment = ({ commentCount,postId }) => {
   
   const handleClick = (postId,commentCount) =>{
     if(commentCount > 0){
-      //ShowComments(postId);
-      if (!commentsShown){
+       if (!commentsShown){
        commentsShown = true;
       dispatch(getComments(postId)) 
-    } 
+    };
+     ShowComments(postId); 
     }
   }
   

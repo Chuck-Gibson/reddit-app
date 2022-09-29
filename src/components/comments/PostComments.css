@@ -1,0 +1,38 @@
+.post-comment {
+    display: inline-block;
+    flex-direction: row;
+    font-size: 12px;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 0.3rem;
+    opacity: 90%;
+    padding: 0.5rem;
+    width: 100%;
+    margin: auto; /* can be removed to get space between comments */
+  }
+  .post-comment p {
+    padding-right: 1rem;
+    width: 100%;
+  }
+  
+  .post-comment-reply {
+    padding-left: 2rem;
+  }
+  .post.content {
+    min-width: 100%;
+  }
+  .post-content span{
+    display:flex;
+    flex-direction: row;
+    margin-right: 0;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    opacity: 60%;
+    width: 100%;
+  } 
+  .post-content .commentSubreddit{
+    text-align: end;
+  }
+
+  

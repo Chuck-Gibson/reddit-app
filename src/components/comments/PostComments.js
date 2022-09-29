@@ -1,41 +1,62 @@
-import Reply from "./Replys";
 import { useSelector } from "react-redux";
 import { selectComments } from "store/slices/comments/commentsSlice";
+import "./PostComments.css";
 
+const findComments = (allComments,postId) =>{
+    const foundComments = allComments.find(post => post[0] === postId);
+    if(foundComments){
+        return foundComments[1];
+    }
+}
 
+const sortComments = (comments) =>{
+return comments.map((comment) => {
+    if(comment.replies && comment.replies !== ""){
+        return (
+            <div className="post-comment-reply--container" key={comment.id}>
+                <div className="post-comment">
+                
+                    <div className="post-content">
+                        <span>
+                            <p className="commentAuthor">{comment.author}</p>
+                            <p className="commentSubreddit">{comment.voteScore}</p>
+                        </span>
+                    <p>{comment.body}</p>
+                    </div>
+                </div>
+                <div className="post-comment-reply">{sortComments(comment.replies)}</div>
+            </div>
+            
+        );
+    }else {
+    return (
+        <div className="post-comment" key={comment.id} >
+           <div className="post-content">
+                        <span>
+                            <p className="commentAuthor">{comment.author}</p>
+                            <p className="commentSubreddit">{comment.voteScore}</p>
+                        </span>
+                    <p>{comment.body}</p>
+                    </div>
+        </div>
+        )}}
+    )
+};
 
 
 
 const PostComments = ({postId, id}) => {
-    return
-   // const comments =  useSelector(selectComments).comments
-    /*comments.map((post) => {
-        if(postId === post.postId ){
-            console.log("test")
-                 post.comments.map((comment) => {
-            if(comment.replies && comment.replies !== ""){
-                return (
-                <div className="post-comment-reply--container">
-                    <div className="post-comment">
-                    <p className="comment-Spacer" style={{"border-top": "1px dashed white"}}></p><p>{comment.body}</p>
-                    </div>
-                    
-                </div>
-                
-            );
-        }else {
-            return (
-                
-            <div className="post-comment" >
-                <p className="comment-Spacer"  style={{"border-top": "1px dashed white"}} ></p><p>{comment.body}</p>
-            </div>
-            )}}
-        )} else {
-            return <div></div>
-        } 
-        
-} 
-)*/};
+    const isLoading =  useSelector(selectComments).status;
+    const allComments =  useSelector(selectComments).comments;
+    const comments = findComments(allComments,postId);
+
+   if(isLoading === "pending"){
+    return <div className="loader" id={id}></div>
+   }
+    else if (isLoading === "ok" && comments){
+       return  sortComments(comments);
+    }; 
+   }; 
 
 
 
@@ -43,9 +64,9 @@ const PostComments = ({postId, id}) => {
    
 
 export const ShowComments = (target) =>{
-    const id = target + "postComments"
+    const id = target + "comments"
     const display = document.getElementById(id).style.display;
-    console.log(document.getElementById(id))
+    
         if(display === "flex"){
              return document.getElementById(id).style.display = "none"
        } else {

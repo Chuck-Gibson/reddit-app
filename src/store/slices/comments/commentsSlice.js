@@ -20,11 +20,11 @@ const commentsSlice = createSlice({
         })
         .addCase(getComments.fulfilled, (state,action) => {
             const payload = [action.payload[0].postId, action.payload]
-            state.status = "ok"
-            let stateCopy = state.comments.slice(); 
+                let stateCopy = state.comments.slice(); 
             const newState = stateCopy.filter((item) => item[0] !== payload[0])
-            newState.push(payload)
-            state.comments = newState;
+                newState.push(payload)
+                state.comments = newState;
+                state.status = "ok"
         })
         .addCase(getComments.rejected, (state, action) =>{
             state.status = "error";
