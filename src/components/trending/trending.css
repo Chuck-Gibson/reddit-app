@@ -49,13 +49,13 @@
   opacity: 0.6;
   margin: auto;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   z-index: 2;
   color: var(--foreground);
 }
 .TrendingPost .trendingPost--info-title {
   text-align: center;
-  margin: auto 1rem 1rem 1rem;
+  margin: auto 0.5rem 2rem 0.5rem;
   color: var(--foreground);
   z-index: 1;
 }
