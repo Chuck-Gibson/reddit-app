@@ -28,6 +28,10 @@
   color: var(--foreground);
 }
 
+.SearchBar svg path {
+  stroke: var(--foreground);
+}
+
 .SearchBar button {
   position: absolute;
   width: 2rem;
