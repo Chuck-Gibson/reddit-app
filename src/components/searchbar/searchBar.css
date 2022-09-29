@@ -26,6 +26,11 @@
 .SearchBar svg {
   width: 1rem;
   color: var(--foreground);
+  stroke: var(--foreground);
+}
+
+.SearchBar svg path {
+  stroke: var(--foreground);
 }
 
 .SearchBar button {
