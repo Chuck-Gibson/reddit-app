@@ -1,0 +1,15 @@
+.btn--get-more {
+  display: block;
+  width: fit-content;
+  padding: 0.4rem 0.6rem;
+  transition: all 150ms linear;
+}
+
+.btn--get-more.pending {
+  /* Basically overriding every thing lol */
+  background-color: var(--background) !important;
+  color: var(--accent-main) !important;
+  border-color: var(--accent-secondary) !important;
+  cursor: none !important;
+  pointer-events: none !important;
+}
