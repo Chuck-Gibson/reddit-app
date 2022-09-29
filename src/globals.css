@@ -32,3 +32,10 @@ button,
 .btn {
   cursor: pointer;
 }
+
+.btn--primary {
+  border-radius: 1rem;
+  color: var(--foreground);
+  background-color: var(--accent-main);
+  border: 1px solid var(--border-color);
+}
