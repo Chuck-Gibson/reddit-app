@@ -14,19 +14,19 @@ describe('Tests for Button components', () => {
     expect(mockFn).toHaveBeenCalled();
   });
 
-  it('should be disabled when loading state is true', () => {
-    const state = true;
+  it('should have a pending class when loading state is true', () => {
+    const isLoading = true;
     render(
       <Button
         handleClick={mockFn}
-        isLoading={state}
+        _className={isLoading ? 'pending' : 'ok'}
       >
         Foo
       </Button>
     );
 
     const button = screen.getByRole('button');
-    const buttonState = button.hasAttribute('disabled', 'true');
-    expect(buttonState).toBe(state);
+    const buttonState = button.classList.contains('pending');
+    expect(buttonState).toBe(true);
   });
 });

@@ -8,9 +8,9 @@ const TYPE = 'hot'; // HACK: Hard code now but I will be building a category sel
 
 export const GetMoreBtn = () => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.allPosts.posts);
+  const { posts, getMore_status } = useSelector((state) => state.allPosts);
   let lastPosts = '';
-  if (posts[0]) lastPosts += posts[posts.length - 1].id;
+  if (posts[0]) lastPosts = posts[posts.length - 1].id;
 
   const handleClick = () => {
     const metaData = {
@@ -25,10 +25,9 @@ export const GetMoreBtn = () => {
     <>
       <Button
         handleClick={handleClick}
-        isLoading={false}
-        _className='btn--get-more btn--primary'
+        _className={`btn--get-more btn--primary ${getMore_status}`}
       >
-        Get more
+        Get more {/* NOTE: feel free to change this to whatever */}
       </Button>
     </>
   );
