@@ -1,33 +1,23 @@
-import { ReactComponent as CommentIcon } from "assets/comment.svg";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getComments } from "store/slices/comments/asyncThunks/getComments";
-import "./allPosts.css";
-import { ShowComments } from "../comments/PostComments";
+import { ReactComponent as CommentIcon } from 'assets/comment.svg';
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { getComments } from 'store/slices/comments/asyncThunks/getComments';
+import './allPosts.css';
 
-
-
-export const Comment = ({ commentCount,postId }) => {
-  const dispatch = useDispatch()
-  let commentsShown = false;
-  
-  const handleClick = (postId) =>{
-    ShowComments(postId);
-    if (!commentsShown){
-      dispatch(getComments(postId))
-       commentsShown = true; 
-    } 
-    
-  }
-  
+export const Comment = ({ commentCount, postId }) => {
+  const handleClick = (postId) => {
+    return null;
+  };
 
   return (
-    
-    <div className="comment">
-      <span className="comment--icon btn" onClick={() => handleClick(postId)}>
+    <div className='comment'>
+      <span
+        className='comment--icon btn'
+        onClick={() => handleClick(postId)}
+      >
         <CommentIcon />
       </span>
-      <span className="comment--count">{commentCount}</span>
+      <span className='comment--count'>{commentCount}</span>
     </div>
   );
 };
