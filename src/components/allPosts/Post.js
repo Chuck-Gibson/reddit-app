@@ -41,7 +41,7 @@ export const Post = ({
         <div className='post--info-subreddit'>{subreddit}</div>
       </section>
 
-      {getImage(url.isImage, url.contentUrl)}
+      {getImage(url)}
 
       {getMedia(media)}
 

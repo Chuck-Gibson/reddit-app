@@ -1,8 +1,8 @@
 import { Img } from 'components/common/Img/Img';
 
-export const getImage = (isImage, contentUrl) => {
-  if (isImage) {
-    return <Img src={contentUrl} />;
+export const getImage = (url) => {
+  if (url.isImage) {
+    return <Img src={url.contentUrl} />;
   }
   return null;
 };
