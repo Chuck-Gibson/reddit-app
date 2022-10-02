@@ -75,7 +75,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width:90%;
+  max-width: 90%;
 }
 
 .post-comment {
@@ -83,13 +83,12 @@
   flex-direction: row;
   font-size: 12px;
   margin-top: 1rem;
-  
 }
 .post-comment p {
   padding-right: 1rem;
 }
 .comment-Spacer {
   transform: translate(-0.5rem, 0.5rem);
-} 
+}
 
 /* CSS rule sets for individual post ends here */

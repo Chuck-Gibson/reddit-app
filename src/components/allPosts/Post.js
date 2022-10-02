@@ -1,9 +1,10 @@
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './allPosts.css';
 import PropTypes from 'prop-types';
-import { selectComments } from '../../store/slices/comments/commentsSlice';
 import { Vote } from './Vote';
-import { Comment } from './Comment';
+import { CommentCount } from './comments/CommentCount';
+import { CommentContainer } from './comments/CommentContainer';
 import { getImage } from './util/getImage';
 import { getMedia } from './util/getMedia';
 
@@ -19,13 +20,20 @@ export const Post = ({
   isVideo,
   media,
 }) => {
+  const [showComments, setShowComments] = useState(false);
+  const getComments = () => {
+    setShowComments((show) => !show);
+  };
+  useEffect(() => {
+    console.log(showComments);
+  }, [showComments]); // BUG: delete when done
+
   const status = useSelector((state) => state.allPosts.status);
 
   if (status === 'pending') {
     return <div> isLoading component would go here</div>;
   }
 
-  const commentsPostId = id + 'postComments';
   // JSX
   return (
     <div
@@ -48,11 +56,15 @@ export const Post = ({
       <section className='post--action'>
         <Vote voteScore={voteScore} />
         {/* called from Post.js Component*/}
-        <Comment
+        <CommentCount
           commentCount={commentCount}
           postId={id}
+          handleClick={getComments}
         />
       </section>
+
+      {showComments && commentCount > 0 && <CommentContainer postId={id} />}
+      {/* NOTE: If auth 2 takes off, this needs to be changed */}
     </div>
   );
 };
