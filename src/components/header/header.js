@@ -14,7 +14,12 @@ const Header = ({ rootNode }) => {
       <Searchbar />
       <div className='header--util'>
         <ThemeSwitcher node={rootNode} />
-        <button id='sign-in'>Sign in</button>
+        <button
+          className='btn--primary'
+          id='sign-in'
+        >
+          Sign in
+        </button>
       </div>
     </div>
   );

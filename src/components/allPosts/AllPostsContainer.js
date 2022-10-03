@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
-import { Post } from "./Post";
-import "./allPosts.css";
+import { useSelector } from 'react-redux';
+import { Post } from './Post';
+import './allPosts.css';
+import { GetMoreBtn } from 'components/getMore/GetMore';
 
 export const AllPostsContainer = () => {
   const { posts, status } = useSelector((state) => state.allPosts);
@@ -23,6 +24,11 @@ export const AllPostsContainer = () => {
       );
     });
   };
-  if (status === "pending") return <div className="loader"></div>;
-  if (status === "ok") return <>{getPosts()}</>;
+  if (status === 'pending') return <div className='loader'></div>;
+  return (
+    <>
+      {getPosts()}
+      <GetMoreBtn />
+    </>
+  );
 };
