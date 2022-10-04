@@ -18,7 +18,8 @@ export const sortComments = (comments, depth) =>{
         return (
             <div className="post-comment-reply--container" 
                  key={comment.id} 
-                 id={comment.id}>
+                 id={comment.id}
+                 style={{"margin-bottom":"1rem"}}>
                 <div className="post-comment">
                 
                     <div className="post-content">
