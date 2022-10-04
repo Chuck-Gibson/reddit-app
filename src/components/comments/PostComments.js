@@ -16,7 +16,9 @@ export const sortComments = (comments, depth) =>{
     return comments.map((comment) => {
      if(comment.replies && comment.replies !== "" && replyDepth < 1){
         return (
-            <div className="post-comment-reply--container" key={comment.id} id={comment.id}>
+            <div className="post-comment-reply--container" 
+                 key={comment.id} 
+                 id={comment.id}>
                 <div className="post-comment">
                 
                     <div className="post-content">
@@ -28,13 +30,18 @@ export const sortComments = (comments, depth) =>{
                     </div>    
                 </div>
                 <RepliesButton replyId={comment.replies[0].id}/>
-                <div className="post-comment-reply" id={comment.replies[0].id+"replies"}  style={{display:"none"}}>{sortComments(comment.replies,1)}</div>
+                <div className="post-comment-reply" 
+                     id={comment.replies[0].id+"replies"}  
+                     style={{display:"none"}}>
+                    {sortComments(comment.replies,1)}</div>
             </div>
             
         );
     }else if(comment.replies && comment.replies !== "" && replyDepth > 1 && replyDepth <= 4){
             return (
-                <div className="post-comment-reply--container" key={comment.id} id={comment.id}>
+                <div className="post-comment-reply--container" 
+                     key={comment.id} 
+                     id={comment.id}>
                     <div className="post-comment">
                     
                         <div className="post-content">
@@ -45,13 +52,16 @@ export const sortComments = (comments, depth) =>{
                         <p>{comment.body}</p>
                         </div>
                     </div>
-                    <div className="post-comment-reply">{sortComments(comment.replies,replyDepth)}</div>
+                    <div className="post-comment-reply">
+                        {sortComments(comment.replies,replyDepth)}</div>
                 </div>
                 
             );
         } else if(comment.author){
     return (
-        <div className="post-comment" key={comment.id} id={comment.id} >
+        <div className="post-comment" 
+             key={comment.id} 
+             id={comment.id} >
            <div className="post-content">
                         <span>
                             <p className="commentAuthor">{comment.author}</p>
