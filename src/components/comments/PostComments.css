@@ -17,9 +17,10 @@
   }
   
   .post-comment-reply {
+    display: none;
     padding-left: 2rem;
   }
-  .post.content {
+  .post-content {
     min-width: 100%;
   }
   .post-content span{
@@ -34,5 +35,18 @@
   .post-content .commentSubreddit{
     text-align: end;
   }
-
+  .repliesButton{
+    opacity: 60%;
+    margin-left: 1rem;
+  }
+ 
+  .repliesButton:hover{
+    opacity: 30%;
+    cursor: pointer;
+    
+  }
+  .repliesButton:active{
+    color:grey;
+  }
+  
   

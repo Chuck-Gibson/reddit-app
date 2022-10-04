@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectComments } from "store/slices/comments/commentsSlice";
+import RepliesButton from "./RepliesButton";
 import "./PostComments.css";
 
 const findComments = (allComments,postId) =>{
@@ -9,11 +10,12 @@ const findComments = (allComments,postId) =>{
     }
 }
 
-const sortComments = (comments) =>{
-return comments.map((comment) => {
-    if(comment.replies && comment.replies !== ""){
+export const sortComments = (comments, depth) =>{
+    let replyDepth = (depth >= 0? depth+1 : 0); // to tell if its the first reply
+    return comments.map((comment) => {
+     if(comment.replies && comment.replies !== "" && replyDepth < 1){
         return (
-            <div className="post-comment-reply--container" key={comment.id}>
+            <div className="post-comment-reply--container" key={comment.id} id={comment.id}>
                 <div className="post-comment">
                 
                     <div className="post-content">
@@ -22,15 +24,33 @@ return comments.map((comment) => {
                             <p className="commentSubreddit">{comment.voteScore}</p>
                         </span>
                     <p>{comment.body}</p>
-                    </div>
+                    </div>    
                 </div>
-                <div className="post-comment-reply">{sortComments(comment.replies)}</div>
+                <RepliesButton replyId={comment.replies[0].id}/>
+                <div className="post-comment-reply" id={comment.replies[0].id+"replies"}>{sortComments(comment.replies,1)}</div>
             </div>
             
         );
-    }else {
+    }else if(comment.replies && comment.replies !== "" && replyDepth > 1 && replyDepth <= 4){
+            return (
+                <div className="post-comment-reply--container" key={comment.id} id={comment.id}>
+                    <div className="post-comment">
+                    
+                        <div className="post-content">
+                            <span>
+                                <p className="commentAuthor">{comment.author}</p>
+                                <p className="commentSubreddit">{comment.voteScore}</p>
+                            </span>
+                        <p>{comment.body}</p>
+                        </div>
+                    </div>
+                    <div className="post-comment-reply">{sortComments(comment.replies,replyDepth)}</div>
+                </div>
+                
+            );
+        } else if(comment.author){
     return (
-        <div className="post-comment" key={comment.id} >
+        <div className="post-comment" key={comment.id} id={comment.id} >
            <div className="post-content">
                         <span>
                             <p className="commentAuthor">{comment.author}</p>
@@ -39,22 +59,26 @@ return comments.map((comment) => {
                     <p>{comment.body}</p>
                     </div>
         </div>
-        )}}
+        )}
+            else{ 
+                return <div><p>No comments</p></div>
+            }}
     )
 };
+
 
 
 
 const PostComments = ({postId, id}) => {
     const isLoading =  useSelector(selectComments).status;
     const allComments =  useSelector(selectComments).comments;
-    const comments = findComments(allComments,postId);
+    const commentsArr = findComments(allComments,postId);
 
    if(isLoading === "pending"){
     return <div className="loader" id={id}></div>
    }
-    else if (isLoading === "ok" && comments){
-       return  sortComments(comments);
+    else if (isLoading === "ok" && commentsArr){
+       return  sortComments(commentsArr);
     }; 
    }; 
 

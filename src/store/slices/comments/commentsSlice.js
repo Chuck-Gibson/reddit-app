@@ -19,7 +19,7 @@ const commentsSlice = createSlice({
             state.status = "pending"
         })
         .addCase(getComments.fulfilled, (state,action) => {
-            const payload = [action.payload[0].postId, action.payload]
+            const payload = [action.payload[0].postId, action.payload, false]
                 let stateCopy = state.comments.slice(); 
             const newState = stateCopy.filter((item) => item[0] !== payload[0])
                 newState.push(payload)
