@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { selectComments } from "store/slices/comments/commentsSlice";
 import RepliesButton from "./RepliesButton";
 import "./PostComments.css";
+import { MdNoEncryption } from "react-icons/md";
 
 const findComments = (allComments,postId) =>{
     const foundComments = allComments.find(post => post[0] === postId);
@@ -27,7 +28,7 @@ export const sortComments = (comments, depth) =>{
                     </div>    
                 </div>
                 <RepliesButton replyId={comment.replies[0].id}/>
-                <div className="post-comment-reply" id={comment.replies[0].id+"replies"}>{sortComments(comment.replies,1)}</div>
+                <div className="post-comment-reply" id={comment.replies[0].id+"replies"}  style={{display:"none"}}>{sortComments(comment.replies,1)}</div>
             </div>
             
         );
