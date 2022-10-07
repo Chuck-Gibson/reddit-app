@@ -63,6 +63,9 @@
   top: 0;
   transform: translateY(-0.12em) rotate(180deg);
 }
+.post svg:hover{
+  opacity: 50%;
+}
 @media only screen and (min-width: 481px) {
   .post {
     width: 40vw;
@@ -77,5 +80,4 @@
   justify-content: center;
   max-width:100%;
 }
-
 /* CSS rule sets for individual post ends here */
