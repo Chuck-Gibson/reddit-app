@@ -1,13 +1,13 @@
 import "./PostComments.css";
 
 const RepliesButton = ({replyId}) => {
-    return (<div 
+    return (<details 
         id={replyId + "button"}
         className="repliesButton" 
         onClick={() => handleClick(replyId)} 
-        > Show Replies  
-        <span>{" >"}</span>
-        </div>)
+        >
+        <summary></summary>
+        </details>)
 };
 
 const handleClick = (target) =>{

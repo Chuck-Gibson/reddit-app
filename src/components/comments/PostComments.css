@@ -47,5 +47,13 @@
   .repliesButton:active{
     color:grey;
   }
+ details summary::before{
+    content: "Show Replies";
+  }
+ details[open] summary::before{
+    content: "Hide Replies";
+  }
+ 
+  
   
   
