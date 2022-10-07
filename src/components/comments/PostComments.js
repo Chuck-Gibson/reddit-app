@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectComments } from "store/slices/comments/commentsSlice";
 import RepliesButton from "./RepliesButton";
 import "./PostComments.css";
-import { MdNoEncryption } from "react-icons/md";
+import { ReactComponent as Arrow } from "assets/arrow.svg";
 
 const findComments = (allComments,postId) =>{
     const foundComments = allComments.find(post => post[0] === postId);
@@ -25,7 +25,19 @@ export const sortComments = (comments, depth) =>{
                     <div className="post-content">
                         <span>
                             <p className="commentAuthor">{comment.author}</p>
+                            <div className="vote">
+                                <span
+                                    aria-label="up vote"
+                                    className="vote--btn btn up">
+                                <Arrow/>
+                                </span>
                             <p className="commentSubreddit">{comment.voteScore}</p>
+                                <span 
+                                    aria-label="down vote"
+                                    className="vote--btn btn down">
+                                <Arrow/>
+                                </span>
+                            </div>
                         </span>
                     <p>{comment.body}</p>
                     </div>    
@@ -48,7 +60,19 @@ export const sortComments = (comments, depth) =>{
                         <div className="post-content">
                             <span>
                                 <p className="commentAuthor">{comment.author}</p>
+                                <div className="vote">
+                                <span
+                                    aria-label="up vote"
+                                    className="vote--btn btn up">
+                                <Arrow/>
+                                </span>
                                 <p className="commentSubreddit">{comment.voteScore}</p>
+                                <span 
+                                    aria-label="down vote"
+                                    className="vote--btn btn down">
+                                <Arrow/>
+                                </span>
+                                </div>
                             </span>
                         <p>{comment.body}</p>
                         </div>
@@ -66,7 +90,19 @@ export const sortComments = (comments, depth) =>{
            <div className="post-content">
                         <span>
                             <p className="commentAuthor">{comment.author}</p>
-                            <p className="commentSubreddit">{comment.voteScore}</p>
+                            <div className="vote">
+                                <span
+                                    aria-label="up vote"
+                                    className="vote--btn btn up">
+                                <Arrow/>
+                                </span>
+                                <p className="commentSubreddit">{comment.voteScore}</p>
+                                <span 
+                                    aria-label="down vote"
+                                    className="vote--btn btn down">
+                                <Arrow/>
+                                </span>
+                            </div>
                         </span>
                     <p>{comment.body}</p>
                     </div>

@@ -12,8 +12,7 @@
     margin: auto; /* can be removed to get space between comments */
   }
   .post-comment p {
-    padding-right: 1rem;
-    width: 100%;
+   padding:0rem .2rem;
   }
   
   .post-comment-reply {
@@ -34,8 +33,20 @@
   .post-content .commentSubreddit{
     text-align: end;
   }
+  .post-content .vote{
+    display: flex;
+    align-items: center;
+  }
+  .post-content .vote span{
+    height: 1.6rem;
+    width: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  /* Rules for the replies button and content */
   .repliesButton{
-    opacity: 60%;
+    opacity: 60%; 
     margin-left: 2rem;
   }
  
