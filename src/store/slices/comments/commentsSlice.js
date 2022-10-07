@@ -19,11 +19,16 @@ const commentsSlice = createSlice({
             state.status = "pending"
         })
         .addCase(getComments.fulfilled, (state,action) => {
-            state.status = "ok"
-            state.comments = action.payload;
+            const payload = [action.payload[0].postId, action.payload, false]
+                let stateCopy = state.comments.slice(); 
+            const newState = stateCopy.filter((item) => item[0] !== payload[0])
+                newState.push(payload)
+                state.comments = newState;
+                state.status = "ok"
         })
         .addCase(getComments.rejected, (state, action) =>{
             state.status = "error";
+            console.log(state.status)
         })
     },
 })

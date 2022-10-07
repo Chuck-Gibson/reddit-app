@@ -1,0 +1,70 @@
+.post-comment {
+    display: inline-block;
+    flex-direction: row;
+    font-size: 12px;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 0.3rem;
+    opacity: 90%;
+    padding: 0.5rem;
+    width: 100%;
+    margin: auto; /* can be removed to get space between comments */
+  }
+  .post-comment p {
+   padding:0rem .2rem;
+  }
+  
+  .post-comment-reply {
+    padding-left: 2rem;
+  }
+  .post-content {
+    min-width: 100%;
+  }
+  .post-content span{
+    display:flex;
+    flex-direction: row;
+    margin-right: 0;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    opacity: 60%;
+    width: 100%;
+  } 
+  .post-content .commentSubreddit{
+    text-align: end;
+  }
+  .post-content .vote{
+    display: flex;
+    align-items: center;
+  }
+  .post-content .vote span{
+    height: 1.6rem;
+    width: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  /* Rules for the replies button and content */
+  .repliesButton{
+    opacity: 60%; 
+    margin-left: 2rem;
+  }
+ 
+  .repliesButton:hover{
+    opacity: 30%;
+    cursor: pointer;
+    
+  }
+  .repliesButton:active{
+    color:grey;
+  }
+ details summary::before{
+    content: "Show Replies";
+  }
+ details[open] summary::before{
+    content: "Hide Replies";
+  }
+
+  
+  
+  

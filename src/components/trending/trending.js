@@ -29,10 +29,9 @@ const Trending = () => {
       </div>
     {trendingPosts.map((post, index) => {
     return(
-    <div className="Trending-post-container">
+    <div className="Trending-post-container " key={post.id}>
       {trendingPosts.length > 0 && (
           <TrendingPost
-          key={post.id}
           post={post}
           id={post.id}
           title={post.title}

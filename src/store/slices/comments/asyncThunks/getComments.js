@@ -9,7 +9,6 @@ export const getComments = createAsyncThunk(
      */
     let fetchingUrl = FETCH_URL;
     fetchingUrl += `/comments/${postId}`;
-    console.log(fetchingUrl)
     try {
       const comments = await fetch(fetchingUrl, {
         method: "GET",

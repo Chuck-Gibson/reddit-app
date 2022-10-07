@@ -1,5 +1,4 @@
 import { ReactComponent as CommentIcon } from "assets/comment.svg";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getComments } from "store/slices/comments/asyncThunks/getComments";
 import "./allPosts.css";
@@ -8,23 +7,24 @@ import { ShowComments } from "../comments/PostComments";
 
 
 export const Comment = ({ commentCount,postId }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   let commentsShown = false;
   
-  const handleClick = (postId) =>{
-    ShowComments(postId);
-    if (!commentsShown){
-      dispatch(getComments(postId))
-       commentsShown = true; 
-    } 
-    
+  const handleClick = (postId,commentCount) =>{
+    if(commentCount > 0){
+       if (!commentsShown){
+       commentsShown = true;
+      dispatch(getComments(postId)) 
+    };
+     ShowComments(postId); 
+    }
   }
   
 
   return (
     
     <div className="comment">
-      <span className="comment--icon btn" onClick={() => handleClick(postId)}>
+      <span className="comment--icon btn" onClick={() => handleClick(postId,commentCount)}>
         <CommentIcon />
       </span>
       <span className="comment--count">{commentCount}</span>

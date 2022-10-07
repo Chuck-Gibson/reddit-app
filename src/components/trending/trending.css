@@ -68,6 +68,7 @@
 } this was a test to put images in trending */
 /* changes when interacted with */
 .TrendingPost:hover {
+  cursor: pointer;
   box-shadow: 0.25rem 0.25rem 0.5rem var(--border-color);
   transform: translate(-4px, -2px);
   border-color: var(--accent-secondary);
