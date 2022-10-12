@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../header/header';
 import AllPosts from 'components/allPosts/AllPosts';
 import Trending from 'components/trending/trending';
+import Subreddit from 'components/subreddit/Subreddit';
 
 const App = () => {
   const rootNode = useRef();
@@ -16,6 +17,7 @@ const App = () => {
       <div className='main-container'>
         <Trending />
         <AllPosts />
+        <Subreddit />
       </div>
     </div>
   );
