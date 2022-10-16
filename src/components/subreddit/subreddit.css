@@ -1,0 +1,15 @@
+#subreddit ul {
+  border: 1px solid var(--border-color);
+  padding: 1em;
+  border-radius: 1em;
+  background-color: var(--background);
+}
+.subreddit li {
+  margin: 0.2em 0;
+  cursor: pointer;
+  /* color: var(--border-color); */
+}
+
+.subreddit .selected {
+  color: var(--foreground);
+}

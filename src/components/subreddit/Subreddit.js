@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FETCH_URL } from 'store/slices/constant';
 import { SubredditView } from './SubredditView';
+import './subreddit.css';
 
 const Subreddit = () => {
   const [sub, setSub] = useState([]);
   const [selectedSub, setSelectedSub] = useState('');
-
-  useEffect(() => {
-    if (sub[0]) console.log(sub);
-  }, [sub]);
 
   useEffect(() => {
     let fetchingUrl = FETCH_URL;
@@ -21,17 +18,12 @@ const Subreddit = () => {
       .catch((err) => console.log(err));
   }, [selectedSub]);
 
-  const handleClick = (_, selectedSub) => {
-    console.log(selectedSub);
-    // setSelectedSub(() => selectedSub);
-  };
-
   if (sub.length !== 0)
     return (
       <>
         <SubredditView
           data={sub}
-          handleClick={handleClick}
+          setSub={setSelectedSub}
           selected={selectedSub}
         />
       </>
