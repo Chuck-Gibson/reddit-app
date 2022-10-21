@@ -63,7 +63,7 @@
   top: 0;
   transform: translateY(-0.12em) rotate(180deg);
 }
-.post svg:hover{
+.post--action .comment svg:hover{
   opacity: 50%;
 }
 @media only screen and (min-width: 481px) {

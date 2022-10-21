@@ -67,7 +67,7 @@ export const Post = ({
 
       <section className='post--action'>
         <Vote voteScore={voteScore} />
-        <Comment commentCount={commentCount} postId={id} className='post--action-comment'/>
+        <Comment commentCount={commentCount} postId={id}/>
       </section>
       <section id={commentsPostId} className="post-container">
       <PostComments  postId={type+"_"+id} id={id} />
