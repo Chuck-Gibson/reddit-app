@@ -17,6 +17,7 @@ const Header = ({ rootNode }) => {
         <button
           className='btn--primary'
           id='sign-in'
+          style={{display:"none"}}
         >
           Sign in
         </button>
