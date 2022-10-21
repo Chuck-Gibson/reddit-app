@@ -12,7 +12,7 @@
   background-color: var(--background);
   position: relative;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 1rem;
 }
 
@@ -68,8 +68,8 @@
 }
 @media only screen and (min-width: 481px) {
   .post {
-    width: 40vw;
-    min-width: 30rem;
+    width: 60vw;
+    min-width: 25rem;
   }
 }
 
