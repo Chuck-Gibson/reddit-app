@@ -65,9 +65,9 @@ export const Post = ({
       {getMedia()}
 
 
-      <section className="post--action">
+      <section className='post--action'>
         <Vote voteScore={voteScore} />
-        <Comment commentCount={commentCount} postId={id} />
+        <Comment commentCount={commentCount} postId={id}/>
       </section>
       <section id={commentsPostId} className="post-container">
       <PostComments  postId={type+"_"+id} id={id} />

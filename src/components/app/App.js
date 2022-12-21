@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div
       className='App'
-      data-theme='dark'
+      defaultdata-theme='dark'
       ref={rootNode}
     >
       <Header rootNode={rootNode} />

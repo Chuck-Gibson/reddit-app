@@ -50,8 +50,9 @@
   transition: all 150ms;
 }
 .header--util .slider-round svg {
-  transform: translate(1px, 2px);
+  transform: translate(2px, 2px);
 }
+
 .header--util input:checked + .slider-round {
   transform: translateX(0.95rem);
 }
